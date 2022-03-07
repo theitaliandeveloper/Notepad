@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Web;
 using System.Diagnostics;
+using System.IO;
 
 namespace Notepad
 {
@@ -35,10 +36,18 @@ namespace Notepad
         /// Punto di ingresso principale dell'applicazione.
         /// </summary>
         [STAThread]
-        static void Main()
+        static void Main(string[] switches)
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+            if (switches.Length == 1)
+            {
+                string arg = switches[0].Trim();
+                if (File.Exists(arg))
+                {
+                    Global.savefilename = arg;
+                }
+            }
             Application.Run(new Form1());
         }
     }

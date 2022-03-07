@@ -253,7 +253,10 @@ namespace Notepad
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            if (File.Exists(Global.savefilename))
+            {
+                text_area.Text = File.ReadAllText(Global.savefilename);
+            }
         }
 
         private void aboutWindowsToolStripMenuItem_Click(object sender, EventArgs e)
