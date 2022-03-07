@@ -29,6 +29,7 @@ namespace Notepad
         private void newToolStripMenuItem_Click(object sender, EventArgs e)
         {
             text_area.Text = "";
+            Global.savefilename = "";
         }
 
         private void openToolStripMenuItem_Click(object sender, EventArgs e)
