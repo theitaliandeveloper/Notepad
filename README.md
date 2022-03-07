@@ -1,2 +1,2 @@
 # Notepad
-Windows notepad remake (dev)
+Windows notepad remake
