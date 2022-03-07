@@ -9,4 +9,5 @@ Windows notepad remake
 
 `<file> - Text file to open with notepad`
 
+---
 ##### Copyright (C) 2022 Vichingo455. All rights reserved
