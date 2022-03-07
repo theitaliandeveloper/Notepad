@@ -5,8 +5,8 @@ Windows notepad remake
 ![image](https://user-images.githubusercontent.com/59311016/157070141-e572019f-bdfb-4b24-8c4d-0475c82eaf6e.png)
 
 ## Command line usage
-`Notepad.exe <file>
+`Notepad.exe <file>`
 
-<file> - Text file to open on notepad`
+`<file> - Text file to open with notepad`
 
 ##### Copyright (C) 2022 Vichingo455. All rights reserved
