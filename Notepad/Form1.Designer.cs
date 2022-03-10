@@ -45,6 +45,7 @@
             this.giveAFeedbackToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutWindowsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.characterStyleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -139,7 +140,8 @@
             // viewToolStripMenuItem
             // 
             this.viewToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.alwaysOnTopToolStripMenuItem});
+            this.alwaysOnTopToolStripMenuItem,
+            this.characterStyleToolStripMenuItem});
             this.viewToolStripMenuItem.Name = "viewToolStripMenuItem";
             this.viewToolStripMenuItem.Size = new System.Drawing.Size(55, 24);
             this.viewToolStripMenuItem.Text = "View";
@@ -149,7 +151,7 @@
             // 
             this.alwaysOnTopToolStripMenuItem.Name = "alwaysOnTopToolStripMenuItem";
             this.alwaysOnTopToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F5;
-            this.alwaysOnTopToolStripMenuItem.Size = new System.Drawing.Size(210, 26);
+            this.alwaysOnTopToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.alwaysOnTopToolStripMenuItem.Text = "Always on top";
             this.alwaysOnTopToolStripMenuItem.Click += new System.EventHandler(this.alwaysOnTopToolStripMenuItem_Click);
             // 
@@ -198,6 +200,14 @@
             this.aboutWindowsToolStripMenuItem.Visible = false;
             this.aboutWindowsToolStripMenuItem.Click += new System.EventHandler(this.aboutWindowsToolStripMenuItem_Click);
             // 
+            // characterStyleToolStripMenuItem
+            // 
+            this.characterStyleToolStripMenuItem.Name = "characterStyleToolStripMenuItem";
+            this.characterStyleToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F7;
+            this.characterStyleToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.characterStyleToolStripMenuItem.Text = "Character style";
+            this.characterStyleToolStripMenuItem.Click += new System.EventHandler(this.characterStyleToolStripMenuItem_Click_1);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -235,6 +245,7 @@
         private System.Windows.Forms.ToolStripMenuItem alwaysOnTopToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem giveAFeedbackToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aboutWindowsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem characterStyleToolStripMenuItem;
     }
 }
 

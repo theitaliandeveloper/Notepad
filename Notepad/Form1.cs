@@ -151,7 +151,7 @@ namespace Notepad
 
         private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Notepad\nVersion " + Program.GetCurrentVersionTostring() + "\nMaded by Vichingo455\nCopyright (C) 2022 Vichingo455. All rights reserved.\n\n\nReleased under GPL 3.0 License: you are free to\n- Modify\n- Use for business\n- Distribute\n- Use at home\n\nBut you have:\n- No liability\n- No warranty", Text);
+            MessageBox.Show("Notepad\nVersion " + Program.GetCurrentVersionTostring() + "" + "\nMaded by Vichingo455\nCopyright (C) 2022 Vichingo455. All rights reserved.\n\n\nReleased under GPL 3.0 License: you are free to\n- Modify\n- Use for business\n- Distribute\n- Use at home\n\nBut you have:\n- No liability\n- No warranty", Text);
         }
         /// <summary>
         /// Check for updates
@@ -175,10 +175,17 @@ namespace Notepad
             }
             catch (Exception ex)
             {
-                var dialog = MessageBox.Show("The following exception occured: " + ex.Message + "\nDo you want to send a crash report", this.Text + " - Critical error", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-                if (dialog == DialogResult.Yes)
+                try
                 {
-                    Program.SendCrashReport(ex);
+                    var dialog = MessageBox.Show("The following exception occured: " + ex.Message + "\nDo you want to send a crash report", this.Text + " - Critical error", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                    if (dialog == DialogResult.Yes)
+                    {
+                        Program.SendCrashReport(ex);
+                    }
+                }
+                catch
+                {
+
                 }
             }
 
@@ -257,6 +264,22 @@ namespace Notepad
             {
                 text_area.Text = File.ReadAllText(Global.savefilename);
             }
+            if (Global.confidential == "true")
+            {
+                var dialog = MessageBox.Show("This version is for testing purpouses only!!!\nYou should use it only for debugging.\nPublic publication of this version is fobidden and severally punished!! Do you agree?",Text,MessageBoxButtons.YesNo,MessageBoxIcon.None,MessageBoxDefaultButton.Button2);
+                if (dialog == DialogResult.Yes)
+                {
+
+                }
+                else
+                {
+                    Environment.Exit(436);
+                }
+            }
+            else
+            {
+
+            }
         }
 
         private void aboutWindowsToolStripMenuItem_Click(object sender, EventArgs e)
@@ -278,10 +301,44 @@ namespace Notepad
                 }
             }
         }
+
+        private void characterStyleToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void characterStyleToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            try
+            {
+                FontDialog stl = new FontDialog();
+                if (stl.ShowDialog() == DialogResult.OK)
+                {
+                    text_area.Font = stl.Font;
+                }
+            }
+            catch (Exception ex)
+            {
+                try
+                {
+                    var dialog = MessageBox.Show("The following exception occured: " + ex.Message + "\nDo you want to send a crash report", this.Text + " - Critical error", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                    if (dialog == DialogResult.Yes)
+                    {
+                        Program.SendCrashReport(ex);
+                    }
+                }
+                catch
+                {
+
+                }
+            }
+        }
     }
     public class Global
     {
         public static string savefilename;
         public static string transparency;
+        public static string confidential;
+        public static string fontsize;
     }
 }
