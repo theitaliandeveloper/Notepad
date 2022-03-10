@@ -40,12 +40,12 @@
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.viewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.alwaysOnTopToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.characterStyleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.checkForUpdatesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.giveAFeedbackToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutWindowsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.characterStyleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -155,6 +155,14 @@
             this.alwaysOnTopToolStripMenuItem.Text = "Always on top";
             this.alwaysOnTopToolStripMenuItem.Click += new System.EventHandler(this.alwaysOnTopToolStripMenuItem_Click);
             // 
+            // characterStyleToolStripMenuItem
+            // 
+            this.characterStyleToolStripMenuItem.Name = "characterStyleToolStripMenuItem";
+            this.characterStyleToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F7;
+            this.characterStyleToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.characterStyleToolStripMenuItem.Text = "Font style";
+            this.characterStyleToolStripMenuItem.Click += new System.EventHandler(this.characterStyleToolStripMenuItem_Click_1);
+            // 
             // helpToolStripMenuItem
             // 
             this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -199,14 +207,6 @@
             this.aboutWindowsToolStripMenuItem.Text = "About Windows";
             this.aboutWindowsToolStripMenuItem.Visible = false;
             this.aboutWindowsToolStripMenuItem.Click += new System.EventHandler(this.aboutWindowsToolStripMenuItem_Click);
-            // 
-            // characterStyleToolStripMenuItem
-            // 
-            this.characterStyleToolStripMenuItem.Name = "characterStyleToolStripMenuItem";
-            this.characterStyleToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F7;
-            this.characterStyleToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.characterStyleToolStripMenuItem.Text = "Character style";
-            this.characterStyleToolStripMenuItem.Click += new System.EventHandler(this.characterStyleToolStripMenuItem_Click_1);
             // 
             // Form1
             // 
