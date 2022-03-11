@@ -41,6 +41,7 @@
             this.viewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.alwaysOnTopToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.characterStyleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.searchTextInTheWebToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.checkForUpdatesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.giveAFeedbackToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -51,15 +52,17 @@
             // 
             // text_area
             // 
+            this.text_area.AllowDrop = true;
             this.text_area.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.text_area.Location = new System.Drawing.Point(-2, 29);
+            this.text_area.Location = new System.Drawing.Point(-3, 31);
             this.text_area.Multiline = true;
             this.text_area.Name = "text_area";
             this.text_area.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.text_area.Size = new System.Drawing.Size(1057, 546);
             this.text_area.TabIndex = 0;
+            this.text_area.WordWrap = false;
             // 
             // menuStrip1
             // 
@@ -70,7 +73,7 @@
             this.helpToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1054, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(1054, 30);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -84,7 +87,7 @@
             this.saveFileWithNameToolStripMenuItem,
             this.exitToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(46, 24);
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(46, 26);
             this.fileToolStripMenuItem.Text = "File";
             // 
             // newToolStripMenuItem
@@ -141,9 +144,10 @@
             // 
             this.viewToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.alwaysOnTopToolStripMenuItem,
-            this.characterStyleToolStripMenuItem});
+            this.characterStyleToolStripMenuItem,
+            this.searchTextInTheWebToolStripMenuItem});
             this.viewToolStripMenuItem.Name = "viewToolStripMenuItem";
-            this.viewToolStripMenuItem.Size = new System.Drawing.Size(55, 24);
+            this.viewToolStripMenuItem.Size = new System.Drawing.Size(55, 26);
             this.viewToolStripMenuItem.Text = "View";
             this.viewToolStripMenuItem.Click += new System.EventHandler(this.viewToolStripMenuItem_Click_1);
             // 
@@ -151,7 +155,7 @@
             // 
             this.alwaysOnTopToolStripMenuItem.Name = "alwaysOnTopToolStripMenuItem";
             this.alwaysOnTopToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F5;
-            this.alwaysOnTopToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.alwaysOnTopToolStripMenuItem.Size = new System.Drawing.Size(301, 26);
             this.alwaysOnTopToolStripMenuItem.Text = "Always on top";
             this.alwaysOnTopToolStripMenuItem.Click += new System.EventHandler(this.alwaysOnTopToolStripMenuItem_Click);
             // 
@@ -159,9 +163,17 @@
             // 
             this.characterStyleToolStripMenuItem.Name = "characterStyleToolStripMenuItem";
             this.characterStyleToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F7;
-            this.characterStyleToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.characterStyleToolStripMenuItem.Size = new System.Drawing.Size(301, 26);
             this.characterStyleToolStripMenuItem.Text = "Font style";
             this.characterStyleToolStripMenuItem.Click += new System.EventHandler(this.characterStyleToolStripMenuItem_Click_1);
+            // 
+            // searchTextInTheWebToolStripMenuItem
+            // 
+            this.searchTextInTheWebToolStripMenuItem.Name = "searchTextInTheWebToolStripMenuItem";
+            this.searchTextInTheWebToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Q)));
+            this.searchTextInTheWebToolStripMenuItem.Size = new System.Drawing.Size(301, 26);
+            this.searchTextInTheWebToolStripMenuItem.Text = "Search text in the web";
+            this.searchTextInTheWebToolStripMenuItem.Click += new System.EventHandler(this.searchTextInTheWebToolStripMenuItem_Click);
             // 
             // helpToolStripMenuItem
             // 
@@ -171,7 +183,7 @@
             this.aboutToolStripMenuItem,
             this.aboutWindowsToolStripMenuItem});
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            this.helpToolStripMenuItem.Size = new System.Drawing.Size(30, 24);
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(30, 26);
             this.helpToolStripMenuItem.Text = "?";
             this.helpToolStripMenuItem.Click += new System.EventHandler(this.viewToolStripMenuItem_Click);
             // 
@@ -246,6 +258,7 @@
         private System.Windows.Forms.ToolStripMenuItem giveAFeedbackToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aboutWindowsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem characterStyleToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem searchTextInTheWebToolStripMenuItem;
     }
 }
 

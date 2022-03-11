@@ -11,11 +11,14 @@ using System.IO;
 using System.Reflection;
 using System.Diagnostics;
 using System.Net;
+using System.Drawing.Printing;
+using System.Web;
 
 namespace Notepad
 {
     public partial class Form1 : Form
     {
+        
         // Update strings
         private readonly string _releaseURL = "https://raw.githubusercontent.com/Vichingo455/Notepad/master/latest.txt";
         public Version CurrentVersion = new Version(Application.ProductVersion);
@@ -312,10 +315,43 @@ namespace Notepad
             try
             {
                 FontDialog stl = new FontDialog();
+                stl.ShowColor = true;
+                stl.AllowVectorFonts = true;
                 if (stl.ShowDialog() == DialogResult.OK)
                 {
                     text_area.Font = stl.Font;
+                    text_area.ForeColor = stl.Color;
                 }
+            }
+            catch (Exception ex)
+            {
+                try
+                {
+                    var dialog = MessageBox.Show("The following exception occured: " + ex.Message + "\nDo you want to send a crash report", this.Text + " - Critical error", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                    if (dialog == DialogResult.Yes)
+                    {
+                        Program.SendCrashReport(ex);
+                    }
+                }
+                catch
+                {
+
+                }
+            }
+        }
+
+        private void printStripMenuItem_Click(object sender, EventArgs e)
+        {
+            
+            
+        }
+
+        private void searchTextInTheWebToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                var txt = HttpUtility.UrlEncode(text_area.Text);
+                Process.Start("https://google.com/search?q=" + txt);
             }
             catch (Exception ex)
             {
@@ -337,8 +373,7 @@ namespace Notepad
     public class Global
     {
         public static string savefilename;
-        public static string transparency;
         public static string confidential;
-        public static string fontsize;
+        public static string font_text;
     }
 }
