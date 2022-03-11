@@ -154,7 +154,7 @@ namespace Notepad
 
         private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Notepad\nVersion " + Program.GetCurrentVersionTostring() + "" + "\nMaded by Vichingo455\nCopyright (C) 2022 Vichingo455. All rights reserved.\n\n\nReleased under GPL 3.0 License: you are free to\n- Modify\n- Use for business\n- Distribute\n- Use at home\n\nBut you have:\n- No liability\n- No warranty", Text);
+            MessageBox.Show("Notepad\nVersion " + Program.GetCurrentVersionTostring() + "" + "\nMaded by Vichingo455\nCopyright (C) 2022 Vichingo455. All rights reserved.\n\n\nReleased under GPL 3.0 License: you are free to\n- Modify\n- Use for business\n- Distribute\n- Use at home\n\nBut you have:\n- No liability\n- No warranty\n\nAt these conditions:\n- License and copyright notice\n- State changes\n- Disclose source\n- Same license", Text);
         }
         /// <summary>
         /// Check for updates
