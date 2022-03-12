@@ -191,24 +191,30 @@ namespace Notepad
 
                 }
             }
+            try
+            {
+                var equals = LatestVersion.CompareTo(CurrentVersion);
 
-            var equals = LatestVersion.CompareTo(CurrentVersion);
-
-            if (equals == 0)
-            {
-                // Up-to-date
-                MessageBox.Show("The program is up-to-date",Text,MessageBoxButtons.OK);
-            }
-            else if (equals < 0)
-            {
-                MessageBox.Show("You are using an unofficial release of Notepad", Text, MessageBoxButtons.OK); // Unofficial
-            }
-            else // New release available!
-            {
-                if (MessageBox.Show("This new version is available:" + " " + LatestVersion + ". You are using the version" + " " + CurrentVersion + ". Do you want to open the download website?", Text, MessageBoxButtons.YesNo) == DialogResult.Yes) // New release available!
+                if (equals == 0)
                 {
-                    Process.Start("https://github.com/Vichingo455/Notepad/releases/tag/" + LatestVersion);
+                    // Up-to-date
+                    MessageBox.Show("The program is up-to-date", Text, MessageBoxButtons.OK);
                 }
+                else if (equals < 0)
+                {
+                    MessageBox.Show("You are using an unofficial release of Notepad", Text, MessageBoxButtons.OK); // Unofficial
+                }
+                else // New release available!
+                {
+                    if (MessageBox.Show("This new version is available:" + " " + LatestVersion + ". You are using the version" + " " + CurrentVersion + ". Do you want to open the download website?", Text, MessageBoxButtons.YesNo) == DialogResult.Yes) // New release available!
+                    {
+                        Process.Start("https://github.com/Vichingo455/Notepad/releases/tag/" + LatestVersion);
+                    }
+                }
+            }
+            catch
+            {
+                
             }
         }
 
@@ -317,6 +323,8 @@ namespace Notepad
                 FontDialog stl = new FontDialog();
                 stl.ShowColor = true;
                 stl.AllowVectorFonts = true;
+                stl.Font = text_area.Font;
+                stl.Color = text_area.ForeColor;
                 if (stl.ShowDialog() == DialogResult.OK)
                 {
                     text_area.Font = stl.Font;
@@ -369,11 +377,40 @@ namespace Notepad
                 }
             }
         }
+
+        private void backgroundColorToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ColorDialog clr = new ColorDialog();
+                clr.Color = text_area.BackColor;
+                if (clr.ShowDialog() == DialogResult.OK)
+                {
+                    text_area.BackColor = clr.Color;
+                    BackColor = clr.Color;
+                    menuStrip1.BackColor = clr.Color;
+                }
+            }
+            catch (Exception ex)
+            {
+                try
+                {
+                    var dialog = MessageBox.Show("The following exception occured: " + ex.Message + "\nDo you want to send a crash report", this.Text + " - Critical error", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                    if (dialog == DialogResult.Yes)
+                    {
+                        Program.SendCrashReport(ex);
+                    }
+                }
+                catch
+                {
+
+                }
+            }
+        }
     }
     public class Global
     {
         public static string savefilename;
         public static string confidential;
-        public static string font_text;
     }
 }

@@ -39,9 +39,10 @@
             this.saveFileWithNameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.viewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.alwaysOnTopToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.characterStyleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.backgroundColorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.searchTextInTheWebToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.alwaysOnTopToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.checkForUpdatesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.giveAFeedbackToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -56,6 +57,7 @@
             this.text_area.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.text_area.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.text_area.Location = new System.Drawing.Point(-3, 31);
             this.text_area.Multiline = true;
             this.text_area.Name = "text_area";
@@ -143,21 +145,14 @@
             // viewToolStripMenuItem
             // 
             this.viewToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.alwaysOnTopToolStripMenuItem,
             this.characterStyleToolStripMenuItem,
-            this.searchTextInTheWebToolStripMenuItem});
+            this.backgroundColorToolStripMenuItem,
+            this.searchTextInTheWebToolStripMenuItem,
+            this.alwaysOnTopToolStripMenuItem});
             this.viewToolStripMenuItem.Name = "viewToolStripMenuItem";
             this.viewToolStripMenuItem.Size = new System.Drawing.Size(55, 26);
             this.viewToolStripMenuItem.Text = "View";
             this.viewToolStripMenuItem.Click += new System.EventHandler(this.viewToolStripMenuItem_Click_1);
-            // 
-            // alwaysOnTopToolStripMenuItem
-            // 
-            this.alwaysOnTopToolStripMenuItem.Name = "alwaysOnTopToolStripMenuItem";
-            this.alwaysOnTopToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F5;
-            this.alwaysOnTopToolStripMenuItem.Size = new System.Drawing.Size(301, 26);
-            this.alwaysOnTopToolStripMenuItem.Text = "Always on top";
-            this.alwaysOnTopToolStripMenuItem.Click += new System.EventHandler(this.alwaysOnTopToolStripMenuItem_Click);
             // 
             // characterStyleToolStripMenuItem
             // 
@@ -167,6 +162,14 @@
             this.characterStyleToolStripMenuItem.Text = "Font style";
             this.characterStyleToolStripMenuItem.Click += new System.EventHandler(this.characterStyleToolStripMenuItem_Click_1);
             // 
+            // backgroundColorToolStripMenuItem
+            // 
+            this.backgroundColorToolStripMenuItem.Name = "backgroundColorToolStripMenuItem";
+            this.backgroundColorToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.F7)));
+            this.backgroundColorToolStripMenuItem.Size = new System.Drawing.Size(301, 26);
+            this.backgroundColorToolStripMenuItem.Text = "Window color";
+            this.backgroundColorToolStripMenuItem.Click += new System.EventHandler(this.backgroundColorToolStripMenuItem_Click);
+            // 
             // searchTextInTheWebToolStripMenuItem
             // 
             this.searchTextInTheWebToolStripMenuItem.Name = "searchTextInTheWebToolStripMenuItem";
@@ -174,6 +177,14 @@
             this.searchTextInTheWebToolStripMenuItem.Size = new System.Drawing.Size(301, 26);
             this.searchTextInTheWebToolStripMenuItem.Text = "Search text in the web";
             this.searchTextInTheWebToolStripMenuItem.Click += new System.EventHandler(this.searchTextInTheWebToolStripMenuItem_Click);
+            // 
+            // alwaysOnTopToolStripMenuItem
+            // 
+            this.alwaysOnTopToolStripMenuItem.Name = "alwaysOnTopToolStripMenuItem";
+            this.alwaysOnTopToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F5;
+            this.alwaysOnTopToolStripMenuItem.Size = new System.Drawing.Size(301, 26);
+            this.alwaysOnTopToolStripMenuItem.Text = "Always on top";
+            this.alwaysOnTopToolStripMenuItem.Click += new System.EventHandler(this.alwaysOnTopToolStripMenuItem_Click);
             // 
             // helpToolStripMenuItem
             // 
@@ -259,6 +270,7 @@
         private System.Windows.Forms.ToolStripMenuItem aboutWindowsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem characterStyleToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem searchTextInTheWebToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem backgroundColorToolStripMenuItem;
     }
 }
 

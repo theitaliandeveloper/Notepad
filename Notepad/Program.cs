@@ -29,7 +29,7 @@ namespace Notepad
 
             body = HttpUtility.UrlEncode(body);
 
-            string uri = $"https://github.com/builtbybel/ThisIsWin11/issues/new?labels=crash+report&title={header}&body={body}";
+            string uri = $"https://github.com/Vichingo455/Notepad/issues/new?labels=crash+report&title={header}&body={body}";
             Process.Start(uri);
         }
         /// <summary>
