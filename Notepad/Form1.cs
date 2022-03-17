@@ -407,6 +407,20 @@ namespace Notepad
                 }
             }
         }
+
+        private void wordWrapToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (wordWrapToolStripMenuItem.Checked == true)
+            {
+                text_area.WordWrap = false;
+                wordWrapToolStripMenuItem.Checked = false;
+            }
+            else
+            {
+                text_area.WordWrap = true;
+                wordWrapToolStripMenuItem.Checked = true;
+            }
+        }
     }
     public class Global
     {
