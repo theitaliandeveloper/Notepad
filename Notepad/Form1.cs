@@ -20,7 +20,7 @@ namespace Notepad
     {
         
         // Update strings
-        private readonly string _releaseURL = "https://raw.githubusercontent.com/Vichingo455/Notepad/master/latest.txt";
+        private readonly string _releaseURL = "http://git.vichingo455.freeddns.org/Vichingo455/Notepad/raw/branch/master/latest.txt";
         public Version CurrentVersion = new Version(Application.ProductVersion);
         public Version LatestVersion;
 
@@ -40,7 +40,7 @@ namespace Notepad
             OpenFileDialog ofd = new OpenFileDialog();
             ofd.Title = "Open a file";
             ofd.Multiselect = false;
-            ofd.Filter = "*.txt|*.txt|*.*|*.*";
+            ofd.Filter = "Text file|*.txt|All files|*.*";
             ofd.DefaultExt = "*.txt";
             if (ofd.ShowDialog() == DialogResult.OK)
             {
@@ -75,7 +75,7 @@ namespace Notepad
             {
                 SaveFileDialog sfd = new SaveFileDialog();
                 sfd.Title = "Save the file";
-                sfd.Filter = "*.txt|*.txt|*.*|*.*";
+                sfd.Filter = "Text file|*.txt|All files|*.*";
                 sfd.DefaultExt = "*.txt";
                 if (sfd.ShowDialog() == DialogResult.OK)
                 {
@@ -154,7 +154,7 @@ namespace Notepad
 
         private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Notepad\nVersion " + Program.GetCurrentVersionTostring() + "" + "\nMaded by Vichingo455\nCopyright (C) 2022 Vichingo455. All rights reserved.\n\n\nReleased under GPL 3.0 License: you are free to\n- Modify\n- Use for business\n- Distribute\n- Use at home\n\nBut you have:\n- No liability\n- No warranty\n\nAt these conditions:\n- License and copyright notice\n- State changes\n- Disclose source\n- Same license", Text);
+            MessageBox.Show("Notepad\nVersion " + Program.GetCurrentVersionTostring() + "" + "\nMade by Vichingo455\nCopyright (C) 2025 Vichingo455. All rights reserved.\n\n\nReleased under GPL 3.0 License: you are free to\n- Modify\n- Use for business\n- Distribute\n- Use at home\n\nBut you have:\n- No liability\n- No warranty\n\nAt these conditions:\n- License and copyright notice\n- State changes\n- Disclose source\n- Same license", Text);
         }
         /// <summary>
         /// Check for updates
@@ -208,7 +208,7 @@ namespace Notepad
                 {
                     if (MessageBox.Show("This new version is available:" + " " + LatestVersion + ". You are using the version" + " " + CurrentVersion + ". Do you want to open the download website?", Text, MessageBoxButtons.YesNo) == DialogResult.Yes) // New release available!
                     {
-                        Process.Start("https://github.com/Vichingo455/Notepad/releases/tag/" + LatestVersion);
+                        Process.Start("https://git.vichingo455.freeddns.org/Vichingo455/Notepad/releases/tag/" + LatestVersion);
                     }
                 }
             }
