@@ -119,7 +119,7 @@ namespace Notepad
         {
             SaveFileDialog sfd = new SaveFileDialog();
             sfd.Title = "Save the file";
-            sfd.Filter = "*.txt|*.txt|*.*|*.*";
+            sfd.Filter = "Text file|*.txt|All files|*.*";
             sfd.DefaultExt = "*.txt";
             if (sfd.ShowDialog() == DialogResult.OK)
             {
