@@ -202,14 +202,13 @@ namespace Notepad
 
                 if (equals == 0)
                 {
-                    // Up-to-date
                     MessageBox.Show("The program is up-to-date", Text, MessageBoxButtons.OK);
                 }
                 else if (equals < 0)
                 {
                     MessageBox.Show("You are using an unofficial release of Notepad", Text, MessageBoxButtons.OK); // Unofficial
                 }
-                else // New release available!
+                else
                 {
                     if (MessageBox.Show("This new version is available:" + " " + LatestVersion + ". You are using the version" + " " + CurrentVersion + ". Do you want to open the download website?", Text, MessageBoxButtons.YesNo) == DialogResult.Yes) // New release available!
                     {
@@ -249,7 +248,8 @@ namespace Notepad
 
         private void giveAFeedbackToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Process.Start("https://forms.gle/crZF4YJ6eiAzQ8ic8");
+            // TODO
+            //Process.Start("https://forms.gle/crZF4YJ6eiAzQ8ic8");
         }
 
         private void resetTransparencyToolStripMenuItem_Click(object sender, EventArgs e)
@@ -422,6 +422,5 @@ namespace Notepad
     public class Global
     {
         public static string savefilename;
-        public static string confidential;
     }
 }
