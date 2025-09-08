@@ -20,7 +20,7 @@ namespace Notepad
     {
         
         // Update strings
-        private readonly string _releaseURL = "http://git.vichingo455.freeddns.org/Vichingo455/Notepad/raw/branch/master/latest.txt";
+        private readonly string _releaseURL = "https://git.vichingo455.freeddns.org/Vichingo455/Notepad/raw/branch/master/latest.txt";
         public Version CurrentVersion = new Version(Application.ProductVersion);
         public Version LatestVersion;
 
@@ -154,7 +154,11 @@ namespace Notepad
 
         private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Notepad\nVersion " + Program.GetCurrentVersionTostring() + "" + "\nMade by Vichingo455\nCopyright (C) 2025 Vichingo455. All rights reserved.\n\n\nReleased under GPL 3.0 License: you are free to\n- Modify\n- Use for business\n- Distribute\n- Use at home\n\nBut you have:\n- No liability\n- No warranty\n\nAt these conditions:\n- License and copyright notice\n- State changes\n- Disclose source\n- Same license", Text);
+#if DEBUG
+            MessageBox.Show("Notepad\nVersion " + Program.GetCurrentVersionTostring() + " (Debug/Beta)" + "\nMade by Vichingo455\nCopyright (C) 2025 Vichingo455. All rights reserved.\n\n\nReleased under GPL 3.0 License: you are free to\n- Modify\n- Use for business\n- Distribute\n- Use at home\n\nBut you have:\n- No liability\n- No warranty\n\nAt these conditions:\n- License and copyright notice\n- State changes\n- Disclose source\n- Same license", Text);
+#else
+            MessageBox.Show("Notepad\nVersion " + Program.GetCurrentVersionTostring() + "\nMade by Vichingo455\nCopyright (C) 2025 Vichingo455. All rights reserved.\n\n\nReleased under GPL 3.0 License: you are free to\n- Modify\n- Use for business\n- Distribute\n- Use at home\n\nBut you have:\n- No liability\n- No warranty\n\nAt these conditions:\n- License and copyright notice\n- State changes\n- Disclose source\n- Same license", Text);
+#endif
         }
         /// <summary>
         /// Check for updates
@@ -163,6 +167,7 @@ namespace Notepad
         {
             try
             {
+                ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12; //Fix HTTPS
                 WebRequest hreq = WebRequest.Create(_releaseURL);
                 hreq.Timeout = 10000;
                 hreq.Headers.Set("Cache-Control", "no-cache, no-store, must-revalidate");
@@ -269,25 +274,17 @@ namespace Notepad
 
         private void Form1_Load(object sender, EventArgs e)
         {
+#if DEBUG
+            var dialog = MessageBox.Show("This version is for testing purpouses only!!!\nYou should use it only for debugging.\nThe update feature is disabled. Continue?", Text, MessageBoxButtons.YesNo, MessageBoxIcon.None, MessageBoxDefaultButton.Button2);
+            if (dialog == DialogResult.No)
+            {
+                Environment.Exit(436);
+            }
+            checkForUpdatesToolStripMenuItem.Enabled = false;
+#endif
             if (File.Exists(Global.savefilename))
             {
                 text_area.Text = File.ReadAllText(Global.savefilename);
-            }
-            if (Global.confidential == "true")
-            {
-                var dialog = MessageBox.Show("This version is for testing purpouses only!!!\nYou should use it only for debugging.\nPublic publication of this version is fobidden and severally punished!! Do you agree?",Text,MessageBoxButtons.YesNo,MessageBoxIcon.None,MessageBoxDefaultButton.Button2);
-                if (dialog == DialogResult.Yes)
-                {
-
-                }
-                else
-                {
-                    Environment.Exit(436);
-                }
-            }
-            else
-            {
-
             }
         }
 
