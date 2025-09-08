@@ -275,7 +275,7 @@ namespace Notepad
         private void Form1_Load(object sender, EventArgs e)
         {
 #if DEBUG
-            var dialog = MessageBox.Show("This version is for testing purpouses only!!!\nYou should use it only for debugging.\nThe update feature is disabled. Continue?", Text, MessageBoxButtons.YesNo, MessageBoxIcon.None, MessageBoxDefaultButton.Button2);
+            var dialog = MessageBox.Show("This version is for testing purpouses only!!!\nYou should use it only for debugging.\nThe update feature is disabled.\nContinue?", Text, MessageBoxButtons.YesNo, MessageBoxIcon.None, MessageBoxDefaultButton.Button2);
             if (dialog == DialogResult.No)
             {
                 Environment.Exit(436);
