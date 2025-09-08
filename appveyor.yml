@@ -1,0 +1,10 @@
+version: autobuild.{build}
+build_cloud: Hyper-V
+configuration: Debug
+platform: Any CPU
+build:
+  parallel: true
+  verbosity: detailed
+artifacts:
+- path: Notepad/bin/Debug/Notepad.exe
+  name: Notepad
